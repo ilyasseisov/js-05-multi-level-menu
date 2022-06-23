@@ -1,0 +1,238 @@
+@import 'framework';
+
+body {
+  height: 100vh;
+  background: $body-gradient;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.menu {
+  width: 300px;
+  padding: 20px;
+  // background: white;
+  display: flex;
+  border-radius: 9px;
+  box-shadow: $shadow-grey-soft;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  .main-menu,
+  .settings-menu,
+  .help-menu {
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+    transition: all 0.3s linear;
+    &.show {
+      display: block;
+    }
+  }
+
+  .main-menu {
+    // background: rgb(221, 226, 255);
+    display: none;
+
+    .item {
+      &:nth-of-type(1):hover {
+        background: $color-purple;
+        box-shadow: $shadow-purple;
+      }
+      &:nth-of-type(2):hover {
+        background: $color-yellow;
+        box-shadow: $shadow-yellow;
+      }
+      &:nth-of-type(3):hover {
+        background: $color-blue;
+        box-shadow: $shadow-blue;
+      }
+      &:nth-of-type(4):hover {
+        background: $color-pink;
+        box-shadow: $shadow-pink;
+      }
+    }
+  }
+
+  .settings-menu {
+    // background: rgb(255, 250, 185);
+    display: none;
+    .item {
+      &:hover {
+        background: $color-yellow;
+        box-shadow: $shadow-yellow;
+      }
+      &.back {
+        background: transparent;
+        box-shadow: none;
+        opacity: 0.7;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .help-menu {
+    // background: rgb(255, 185, 240);
+    display: none;
+    .item {
+      &:hover {
+        background: $color-blue;
+        box-shadow: $shadow-blue;
+      }
+      &.back {
+        background: transparent;
+        box-shadow: none;
+        opacity: 0.7;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.item {
+  padding: 16px;
+  border-radius: 9px;
+  background: white;
+  box-shadow: $shadow-grey-soft;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:not(.back):hover {
+    span {
+      color: white;
+      transition: all 0.2s ease-out;
+    }
+    path {
+      fill: white;
+      transition: all 0.2s ease-out;
+    }
+  }
+
+  span {
+    font-size: 20px;
+  }
+
+  &.back {
+    box-shadow: none;
+    & > * {
+      opacity: 0.5;
+    }
+    & .item-icon {
+      opacity: 0.5;
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+
+  &-name {
+    font-size: 20px;
+    color: $color-grey-5;
+  }
+
+  &-icon {
+    // background: rgb(209, 244, 255);
+    vertical-align: sub;
+    margin-right: 10px;
+    &.back {
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .chevron-icon {
+    // background: rgb(209, 244, 255);
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes slideLeftToZero {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideRightToZero {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideLeftToZero {
+  animation: slideLeftToZero 0.5s ease-out forwards;
+}
+
+.slideRightToZero {
+  animation: slideRightToZero 0.5s ease-out forwards;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.6;
+  // filter: blur(5px);
+
+  &.one {
+    width: 200px;
+    height: 200px;
+    background: $gradient-purple;
+    // border: 3px solid $color-purple;
+    top: 27%;
+    left: 38%;
+    z-index: -1;
+    box-shadow: $shadow-purple;
+  }
+  &.two {
+    width: 100px;
+    height: 100px;
+    background: $gradient-yellow;
+    top: 60%;
+    left: 55%;
+    z-index: -1;
+    box-shadow: $shadow-yellow;
+  }
+  &.three {
+    width: 300px;
+    height: 300px;
+    opacity: 0.2;
+    background: $gradient-purple;
+    top: 25%;
+    left: 37%;
+    z-index: -1;
+    box-shadow: $shadow-purple;
+    filter: blur(50px);
+  }
+  &.four {
+    width: 150px;
+    height: 150px;
+    opacity: 0.5;
+    background: $gradient-yellow;
+    top: 53%;
+    left: 50%;
+    z-index: -1;
+    box-shadow: $shadow-yellow;
+    filter: blur(50px);
+  }
+}
