@@ -213,11 +213,13 @@ body {
 }
 
 .jssecrets {
+  font-weight: 500;
   text-decoration: none !important;
   padding: 16px;
   background: #ffc805;
   color: #000000;
-  font-size: 1em;
+  font-size: 1.2em;
+  letter-spacing: 0.2px;
   border-radius: 8px;
   box-shadow: 0px 4px 12px #b8900030, 0px 8px 24px #b8900060;
   position: absolute;
