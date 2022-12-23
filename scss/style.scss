@@ -22,6 +22,10 @@ body {
   -webkit-backdrop-filter: blur(4.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 
+  @media (max-width: 400px) {
+    width: 260px;
+  }
+
   .main-menu,
   .settings-menu,
   .help-menu {
@@ -196,19 +200,31 @@ body {
     width: 200px;
     height: 200px;
     background: $gradient-purple;
-    top: 20%;
-    left: 35%;
+    top: 30%;
+    left: 38%;
     z-index: -1;
     box-shadow: $shadow-purple;
+
+    @media (max-width: 400px) {
+      width: 140px;
+      height: 140px;
+      top: 33%;
+      left: 22%;
+    }
   }
   &.two {
     width: 100px;
     height: 100px;
     background: $gradient-yellow;
-    top: 62%;
-    left: 56%;
+    top: 58%;
+    left: 55%;
     z-index: -1;
     box-shadow: $shadow-yellow;
+
+    @media (max-width: 400px) {
+      top: 60%;
+      left: 62%;
+    }
   }
 }
 
