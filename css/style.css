@@ -181,6 +181,10 @@ body {
   animation: slideRightToZero 0.5s ease-out forwards;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .circle {
   position: absolute;
   border-radius: 100%;
@@ -191,32 +195,52 @@ body {
   width: 200px;
   height: 200px;
   background: linear-gradient(45deg, rgb(123, 66, 209) 0%, rgb(123, 104, 238) 100%);
-  top: 30%;
-  left: 38%;
+  top: -80px;
+  left: -80px;
   z-index: -1;
   box-shadow: 0 10px 25px rgba(123, 66, 209, 0.4);
 }
-@media (max-width: 400px) {
+@media (max-width: 575px) {
   .circle.one {
     width: 140px;
     height: 140px;
-    top: 33%;
-    left: 22%;
+    top: -40px;
+    left: -40px;
+  }
+}
+@media (max-width: 400px) {
+  .circle.one {
+    width: 60px;
+    height: 60px;
+    top: -20px;
+    left: -20px;
+  }
+}
+@media (max-width: 300px) {
+  .circle.one {
+    display: none;
   }
 }
 .circle.two {
   width: 100px;
   height: 100px;
   background: linear-gradient(45deg, rgb(245, 205, 81) 0%, rgb(247, 206, 81) 100%);
-  top: 58%;
-  left: 55%;
+  bottom: -40px;
+  right: -40px;
   z-index: -1;
   box-shadow: 0 10px 25px rgba(245, 205, 81, 0.4);
 }
-@media (max-width: 400px) {
+@media (max-width: 575px) {
   .circle.two {
-    top: 60%;
-    left: 62%;
+    width: 60px;
+    height: 60px;
+    bottom: -20px;
+    right: -20px;
+  }
+}
+@media (max-width: 300px) {
+  .circle.two {
+    display: none;
   }
 }
 
